@@ -1,0 +1,54 @@
+version: '3'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - ${EXMENT_DOCKER_HTTP_PORTS-80}:80
+    volumes:
+      - ./volumes/nginx.conf:/etc/nginx/conf.d/default.conf
+      - webserver-www-data:/var/www/exment
+    env_file: .env
+    depends_on:
+      - php
+    networks:
+      - webserver-network
+    environment:
+      - VIRTUAL_HOST=${EXMENT_DOCKER_FRONT_DOMAIN-localhost}
+
+  php:
+    build: 
+      context: ./exment
+      args:
+        - LARAVEL_VERSION=${EXMENT_DOCKER_LARAVEL_VERSION-5.6.*}
+        - EXMENT_VERSION=${EXMENT_DOCKER_EXMENT_VERSION-*}
+
+    volumes:
+      - webserver-www-data:/var/www/exment
+      - ./volumes/exment/php.ini:/usr/local/etc/php/php.ini
+      - ./volumes/exment/logs:/var/www/exment/storage/logs
+      - ./volumes/exment/.env:/var/www/exment/.env
+    env_file: .env
+    networks:
+      - webserver-network
+
+  mariadb:
+    image: mariadb:10.4
+    ports:
+      - ${EXMENT_DOCKER_MYSQL_PORT-3306}:3306
+    volumes:
+      - exment-mariadb-data:/var/lib/mysql
+    env_file: .env
+    environment:
+      MYSQL_DATABASE: ${EXMENT_DOCKER_MYSQL_DATABASE-exment_database}
+      MYSQL_ROOT_PASSWORD: ${EXMENT_DOCKER_MYSQL_ROOT_PASSWORD-secret}
+      MYSQL_USER: ${EXMENT_DOCKER_MYSQL_USER-exment_user}
+      MYSQL_PASSWORD: ${EXMENT_DOCKER_MYSQL_PASSWORD-secret}  
+    networks:
+      - webserver-network 
+
+volumes:
+  webserver-www-data:
+  exment-mariadb-data:
+  
+networks:
+  webserver-network:
