@@ -1,0 +1,3 @@
+[submodule "mattermost-initializer"]
+	path = mattermost-initializer
+	url = https://github.com/tmori/mattermost-initializer.git

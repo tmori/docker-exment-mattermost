@@ -43,6 +43,7 @@ if [ "$1" = '/opt/mattermost/bin/mattermost' ]; then
     cp /config.json.save "$MM_CONFIG"
     # Substitute some parameters with jq
     jq '.ServiceSettings.ListenAddress = ":8000"' "$MM_CONFIG" >"$MM_CONFIG.tmp" && mv "$MM_CONFIG.tmp" "$MM_CONFIG"
+    jq '.ServiceSettings.EnableLocalMode = true' "$MM_CONFIG" >"$MM_CONFIG.tmp" && mv "$MM_CONFIG.tmp" "$MM_CONFIG"
     jq '.LogSettings.EnableConsole = true' "$MM_CONFIG" >"$MM_CONFIG.tmp" && mv "$MM_CONFIG.tmp" "$MM_CONFIG"
     jq '.LogSettings.ConsoleLevel = "ERROR"' "$MM_CONFIG" >"$MM_CONFIG.tmp" && mv "$MM_CONFIG.tmp" "$MM_CONFIG"
     jq '.FileSettings.Directory = "/opt/mattermost/data/"' "$MM_CONFIG" >"$MM_CONFIG.tmp" && mv "$MM_CONFIG.tmp" "$MM_CONFIG"
