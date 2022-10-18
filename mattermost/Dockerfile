@@ -9,7 +9,7 @@ ARG edition=team
 ARG PUID=2000
 ARG PGID=2000
 ARG MM_BINARY=
-ARG MM_VERSION=7.2.0
+ARG MM_VERSION=7.4.0
 
 
 # Install some needed packages
