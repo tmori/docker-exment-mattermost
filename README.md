@@ -130,7 +130,7 @@ INFO: add users on channel-01:
 INFO: OK
 ```
 
-ブラウザで `localhost:8000` にアクセスすると、下図のようにログイン画面が出てきます。
+ブラウザで `http://localhost:8000` にアクセスすると、下図のようにログイン画面が出てきます。
 任意のユーザID(user-1～10, root)で、ログインします。パスワードはすべて `Password-999` です。
 
 ![image](https://user-images.githubusercontent.com/164193/196335160-25767336-894a-4b84-a4ee-1357804a04f5.png)
@@ -138,3 +138,33 @@ INFO: OK
 ログイン成功すると、チャットスペースが現れます。
 
 ![image](https://user-images.githubusercontent.com/164193/196335296-a9fa6a59-7078-4d19-b0f1-4ebf8fd13aee.png)
+
+
+## Exment のセットアップ手順
+
+ブラウザで `http://localhost/admin` にアクセスします。
+
+![image](https://user-images.githubusercontent.com/164193/196335461-8a1de807-8213-43f7-8b42-b5ee0626d62f.png)
+
+
+「次へ」をクリックします。
+
+![image](https://user-images.githubusercontent.com/164193/196335521-215633c5-4bb3-482e-aad6-d58f99a2bcdc.png)
+
+
+「次へ」をクリックします。
+
+![image](https://user-images.githubusercontent.com/164193/196335558-28514be0-c1b8-4f8a-94ed-1e49e696c703.png)
+
+「次へ」をクリックします。
+
+![image](https://user-images.githubusercontent.com/164193/196335595-cd646d27-b637-4748-b4d6-2d115e25e715.png)
+
+「インストール実行」をクリックします。しばらくすると、下図の設定画面が出てきますが、管理情報を設定して保存します。
+
+![image](https://user-images.githubusercontent.com/164193/196335789-d3215c1a-fcba-49ef-88f1-8630d10ff20d.png)
+
+成功すると、下図のようにExmentの初期画面が現れます。
+
+![image](https://user-images.githubusercontent.com/164193/196335856-614746a1-39f8-42a4-8eab-f7a94d1bfe5b.png)
+
