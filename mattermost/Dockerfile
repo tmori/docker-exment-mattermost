@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 
 # Some ENV variables
-ENV PATH="/mattermost/bin:${PATH}"
+ENV PATH="/opt/mattermost/bin:${PATH}"
 ENV MM_INSTALL_TYPE=docker
 
 # Build argument to set Mattermost edition

@@ -20,13 +20,14 @@ DB_PORT_NUMBER=${DB_PORT_NUMBER:-5432}
 DB_USE_SSL=${DB_USE_SSL:-disable}
 MM_DBNAME=${MM_DBNAME:-mattermost}
 MM_CONFIG=${MM_CONFIG:-/opt/mattermost/config/config.json}
+echo "MM_CONFIG=${MM_CONFIG} : $1"
 
 _1=$(echo "$1" | awk '{ s=substr($0, 0, 1); print s; }')
 if [ "$_1" = '-' ]; then
   set -- mattermost "$@"
 fi
 
-if [ "$1" = 'mattermost' ]; then
+if [ "$1" = '/opt/mattermost/bin/mattermost' ]; then
   # Check CLI args for a -config option
   for ARG in "$@"; do
     case "$ARG" in
