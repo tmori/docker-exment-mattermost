@@ -130,3 +130,11 @@ INFO: add users on channel-01:
 INFO: OK
 ```
 
+ブラウザで `localhost:8000` にアクセスすると、下図のようにログイン画面が出てきます。
+任意のユーザID(user-1～10, root)で、ログインします。パスワードはすべて `Password-999` です。
+
+![image](https://user-images.githubusercontent.com/164193/196335160-25767336-894a-4b84-a4ee-1357804a04f5.png)
+
+ログイン成功すると、チャットスペースが現れます。
+
+![image](https://user-images.githubusercontent.com/164193/196335296-a9fa6a59-7078-4d19-b0f1-4ebf8fd13aee.png)
