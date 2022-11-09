@@ -29,6 +29,8 @@ services:
       - ./volumes/exment/php.ini:/usr/local/etc/php/php.ini
       - ./volumes/exment/logs:/var/www/exment/storage/logs
       - ./volumes/exment/.env:/var/www/exment/.env
+      - ./volumes/exment/libs:/var/www/exment/app/libs
+      - ./volumes/exment/myinstall:/var/www/exment/tmp/myinstall
     env_file: .env
     networks:
       - webserver-network
