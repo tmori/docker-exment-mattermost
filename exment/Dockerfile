@@ -21,7 +21,7 @@ WORKDIR /var/www/exment
 RUN COMPOSER_MEMORY_LIMIT=-1 composer create-project laravel/laravel=${LARAVEL_VERSION} .
 RUN composer config --no-plugins allow-plugins.kylekatarnls/update-helper true
 RUN composer require psr/simple-cache=^2.0
-RUN COMPOSER_MEMORY_LIMIT=-1 composer require exceedone/exment=${EXMENT_VERSION}
+RUN COMPOSER_MEMORY_LIMIT=-1 composer -W require exceedone/exment=${EXMENT_VERSION}
 
 RUN php artisan vendor:publish --provider="Exceedone\\Exment\\ExmentServiceProvider"
 RUN chown -R www-data:www-data /var/www/exment \
